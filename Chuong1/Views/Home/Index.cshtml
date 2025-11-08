@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<main class="container py-5 animate__animated animate__fadeIn">
+
+    <!-- HERO SECTION -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary display-4 mb-3" data-aos="zoom-in">Chào mừng bạn đến với ASP.NET MVC</h1>
+        <p class="lead text-secondary mb-4" data-aos="fade-up" data-aos-delay="200">Nền tảng xây dựng ứng dụng web mạnh mẽ, chuẩn mô hình MVC hiện đại.</p>
+        <a href="https://asp.net" data-aos="fade-up" data-aos-delay="400" class="btn btn-primary btn-lg px-4 rounded-pill shadow">
+            Tìm hiểu thêm
+        </a>
+    </div>
+
+    <!-- FEATURE CARDS -->
+    <div class="row g-4">
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="card h-100 shadow-sm hover-card border-0">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-play-circle fs-1 text-primary"></i>
+                    <h4 class="fw-semibold mt-3">Bắt đầu nhanh</h4>
+                    <p class="text-muted mt-2">
+                        Cấu trúc rõ ràng, dễ học và dễ triển khai trong môi trường doanh nghiệp.
+                    </p>
+                    <a class="btn btn-outline-primary rounded-pill px-4" href="https://go.microsoft.com/fwlink/?LinkId=301865">Xem thêm →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="900">
+            <div class="card h-100 shadow-sm hover-card border-0">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-box-seam fs-1 text-primary"></i>
+                    <h4 class="fw-semibold mt-3">Kho thư viện phong phú</h4>
+                    <p class="text-muted mt-2">
+                        NuGet giúp cài, cập nhật thư viện cực dễ, tiết kiệm thời gian phát triển.
+                    </p>
+                    <a class="btn btn-outline-primary rounded-pill px-4" href="https://go.microsoft.com/fwlink/?LinkId=301866">Xem thêm →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="1200">
+            <div class="card h-100 shadow-sm hover-card border-0">
+                <div class="card-body text-center py-4">
+                    <i class="bi bi-cloud-upload fs-1 text-primary"></i>
+                    <h4 class="fw-semibold mt-3">Triển khai dễ dàng</h4>
+                    <p class="text-muted mt-2">
+                        Xuất bản lên hosting hoặc cloud như Azure chỉ với vài thao tác.
+                    </p>
+                    <a class="btn btn-outline-primary rounded-pill px-4" href="https://go.microsoft.com/fwlink/?LinkId=301867">Xem thêm →</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'slide',
+            once: true
+        });
+    </script>
+</main>

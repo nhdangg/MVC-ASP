@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*@Model chuong1.Models.TL_GiaiPT_Bac1*@
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-primary text-white text-center py-3">
+                    <h4 class="m-0">Giải phương trình bậc 1: ax + b = 0</h4>
+                </div>
+
+                <div class="card-body p-4">
+
+                    <form method="post" action="Index">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nhập a:</label>
+                            <input type="number" step="any" name="HeSoA" class="form-control" placeholder="Nhập hệ số a" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Nhập b:</label>
+                            <input type="number" step="any" name="HeSoB" class="form-control" placeholder="Nhập hệ số b" required />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">
+                            Giải Phương Trình
+                        </button>
+                    </form>
+
+                </div>
+
+                @if (Model != null && (Model.HeSoA != 0 || Model.HeSoB != 0))
+                {
+                    <div class="card-footer text-center bg-light py-3">
+                        <h5 class="text-success fw-bold">Kết quả: @Model.GiaiPTBac1()</h5>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+

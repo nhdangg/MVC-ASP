@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    <address>
+        One Microsoft Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        425.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const area = document.querySelector('main');
+
+        area.addEventListener('click', function (e) {
+
+            let rect = area.getBoundingClientRect();
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
+
+            for (let i = 0; i < 20; i++) { // số tia pháo hoa
+                let spark = document.createElement('span');
+                spark.classList.add('spark');
+
+                let angle = Math.random() * 2 * Math.PI;
+                let distance = 60 + Math.random() * 40;
+
+                let dx = Math.cos(angle) * distance;
+                let dy = Math.sin(angle) * distance;
+
+                spark.style.left = x + 'px';
+                spark.style.top = y + 'px';
+                spark.style.setProperty('--dx', dx + 'px');
+                spark.style.setProperty('--dy', dy + 'px');
+
+                area.appendChild(spark);
+
+                setTimeout(() => spark.remove(), 900);
+            }
+        });
+    });
+</script>
+
+<style>
+    main {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .spark {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #ff003c, 0 0 5px #ff8a00, 0 0 5px #f8ff00, 0 0 5px #20ff00, 0 0 5px #00cfff, 0 0 5px #4c00ff, 0 0 5px #ff00e7;
+        animation: travel 0.9s ease-out forwards;
+    }
+
+    @@keyframes travel {
+        from {
+            transform: translate(0, 0) scale(1);
+            opacity: 1;
+        }
+
+        to {
+            transform: translate(var(--dx), var(--dy)) scale(0.3);
+            opacity: 0;
+        }
+    }
+</style>

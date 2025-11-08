@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container shadow col-12 col-md-10 col-lg-5">
+    <div class="row p-5">
+        @using (Html.BeginForm("HienThi", "TL_DS_NhanVien", FormMethod.Post))
+        {
+            <div>
+                <div class="p-0">@Html.Label("txtMaNV", "Mã Nhân Viên", new { @class = "form-label" })</div>
+                <div class="row">@Html.TextBox("txtMaNV", null, new { @class = "form-control", required = "required" })</div>
+            </div>
+            <div class="mt-3">
+                <div class="p-0">@Html.Label("txtTenNV", "Tên Nhân Viên", new { @class = "form-label" })</div>
+                <div class="row">@Html.TextBox("txtTenNV", null, new { @class = "form-control", required = "required" })</div>
+            </div>
+            <div class="mt-3">
+                <div class="p-0">@Html.Label("txtDonVi", "Đơn Vị", new { @class = "form-label" })</div>
+                <div class="row">
+                    @Html.DropDownList("txtDonVi",
+                        new SelectList(new List<string> { "Hành Chính", "Kỹ Thuật", "Kinh Doanh" }),
+                        "",
+                        new { @class = "form-control", required = "required" })
+                </div>
+            </div>
+            <div class="mt-3">
+                @Html.Label("txtGioiTinh", "Giới Tính", new { @class = "form-label" })
+                @Html.RadioButton("txtGioiTinh", "Nam", true) <span>Nam</span>
+                @Html.RadioButton("txtGioiTinh", "Nữ") <span>Nữ</span>
+            </div>
+            <div class="mt-3">
+                <div class="p-0">@Html.Label("txtSoNgayCong", "Số Ngày Công", new { @class = "form-label" })</div>
+                <div class="row">@Html.TextBox("txtSoNgayCong", null, new { @class = "form-control", required = "required" })</div>
+            </div>
+
+            <div class="mt-3">
+                <div class="p-0">@Html.Label("txtThuNhap", "Thu Nhập", new { @class = "form-label" })</div>
+                <div class="row">@Html.TextBox("txtThuNhap", null, new { @class = "form-control", required = "required" })</div>
+            </div>
+            <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-primary px-4 col-12">Tính</button>
+            </div>
+        }
+        <div class="table table-bordered">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mã Nhân Viên</th>
+                        <th>Tên Nhân Viên</th>
+                        <th>Đơn Vị</th>
+                        <th>Giới Tính</th>
+                        <th>Số Ngày Công</th>
+                        <th>Thu Nhập</th>
+                        <th>Tính Thu Nhập</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(model => model.MaNV)</td>
+                        <td>@Html.DisplayFor(model => model.TenNV)</td>
+                        <td>@Html.DisplayFor(model => model.DonVi)</td>
+                        <td>@Html.DisplayFor(model => model.GioiTinh)</td>
+                        <td>@Html.DisplayFor(model => model.SoNgayCong)</td>
+                        <td>@Html.DisplayFor(model => model.ThuNhap)</td>
+                        <td>@Html.DisplayFor(model => model.TinhThuNhap)</td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+</div>

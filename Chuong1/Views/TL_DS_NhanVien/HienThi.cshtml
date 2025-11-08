@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "HienThi";
+}
+@model Chuong1.Models.DanhSachNV
+
+<h2>HienThi</h2>
+<div class="table table-bordered">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Mã Nhân Viên</th>
+                <th>Tên Nhân Viên</th>
+                <th>Đơn Vị</th>
+                <th>Giới Tính</th>
+                <th>Số Ngày Công</th>
+                <th>Thu Nhập</th>
+                <th>Tính Thu Nhập</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(model => model.MaNV)</td>
+                <td>@Html.DisplayFor(model => model.TenNV)</td>
+                <td>@Html.DisplayFor(model => model.DonVi)</td>
+                <td>@Html.DisplayFor(model => model.GioiTinh)</td>
+                <td>@Html.DisplayFor(model => model.SoNgayCong)</td>
+                <td>@Html.DisplayFor(model => model.ThuNhap)</td>
+                <td>@Html.DisplayFor(model => model.TinhThuNhap)</td>
+            </tr>
+    </table>
+</div>
+

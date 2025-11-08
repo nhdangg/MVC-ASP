@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container col-12 col-md-10 col-lg-6 border border-2 rounded-2 p-4 shadow">
+    <form action="Bai1_ThaoLuan1_2" method="post">
+        <div class="row">
+            <label class="col-12 form-labe p-0 mt-3">Mã hàng:</label>
+            <input type="text" id="MaH" name="MaH" class="col-12 form-control" required />
+
+            <label class="col-12 form-labe p-0 mt-3">Tên hàng:</label>
+            <input type="text" id="TenH" name="TenH" class="col-12 form-control" required />
+
+            <label class="col-12 form-labe p-0 mt-3">Số lượng:</label>
+            <input type="text" id="SoL" name="SoL" class="col-12 form-control" required />
+
+            <label class="col-12 form-labe p-0 mt-3">Đơn giá:</label>
+            <input type="text" id="DonG" name="DonG" class="col-12 form-control" required />
+
+            
+            <input type="submit" id="tinh" value="Tính" class="btn bg-black text-white col-12 mt-3" />
+           
+            <script>
+                window.onload = function () {
+                    document.getElementById("MaH").value = "@ViewBag.MA_HANG";
+                    document.getElementById("TenH").value = "@Html.Raw(HttpUtility.JavaScriptStringEncode(ViewBag.TEN_HANG))";
+                    document.getElementById("SoL").value = "@ViewBag.SO_LUONG";
+                    document.getElementById("DonG").value = "@ViewBag.DON_GIA";
+                };
+            </script>
+            <div class="col-12 table mt-4">
+                <table class="table table-bordered table-success">
+                    <tbody>
+                        <tr>
+                            <span class="text-danger fw-bold">@ViewBag.Error</span>
+                            <td>@ViewBag.MA_HANG</td>
+                            <td>@ViewBag.TEN_HANG</td>
+                            <td>@ViewBag.SO_LUONG</td>
+                            <td>@ViewBag.DON_GIA</td>
+                            <td>@ViewBag.THANH_TIEN</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+    </form>
+</div>
+

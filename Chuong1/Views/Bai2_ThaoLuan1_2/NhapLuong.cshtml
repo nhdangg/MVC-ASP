@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "NhapLuong";
+}
+<div class="container col-6 border p-4 shadow rounded-3 mt-4">
+
+    <form action="NhapLuong" method="post">
+        <div class="row">
+            <label class="p-0">Mã nhân viên:</label>
+            <input type="text" name="MaNV" class="form-control" required />
+
+            <label class="p-0">Họ tên:</label>
+            <input type="text" name="HoTen" class="form-control" required />
+
+            <label class="p-0">Hệ số lương:</label>
+            <input type="text" name="HeSoLuong" class="form-control" required />
+
+            <label class="p-0">Lương cơ bản:</label>
+            <input type="text" name="LuongCoBan" class="form-control" required />
+
+            <button type="submit" class="btn bg-dark text-white w-100 mt-3">Tính lương</button>
+        </div>
+    </form>
+
+    <hr />
+    <span class="text-danger"> @ViewBag.Error</span>
+    @if (ViewBag.Luong != null)
+    {
+        <h4>Kết quả:</h4>
+        <p><b>Mã NV:</b> @ViewBag.MaNV</p>
+        <p><b>Họ tên:</b> @ViewBag.HoTen</p>
+        <p><b>Hệ số lương:</b> @ViewBag.HeSoLuong</p>
+        <p><b>Lương cơ bản:</b> @ViewBag.LuongCoBan</p>
+        <p><b>Lương:</b> @ViewBag.Luong</p>
+    }
+</div>

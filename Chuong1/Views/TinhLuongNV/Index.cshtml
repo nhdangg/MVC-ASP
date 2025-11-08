@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@using (Html.BeginForm("HienThi", "TinhLuongNV", FormMethod.Post))
+{
+    <div>
+        @Html.Label("txtMaNV", "Mã Nhân Viên", new { @class = "form-label" })
+        @Html.TextBox("txtMaNV", null, new { @class = "form-control", required = "required" })
+    </div>
+    <div>
+        @Html.Label("txtTenNV", "Tên Nhân Viên", new { @class = "form-label" })
+        @Html.TextBox("txtTenNV", null, new { @class = "form-control", required = "required" })
+    </div>
+    <div>
+        @Html.Label("txtHeSoLuong", "Hệ Số Lương", new { @class = "form-label" })
+        @Html.TextBox("txtHeSoLuong", null, new { @class = "form-control", required = "required" })
+    </div>
+    <div>
+        @Html.Label("txtLuongCB", "Lương cơ bản", new { @class = "form-label" })
+        @Html.TextBox("txtLuongCB", null, new { @class = "form-control", required = "required" })
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary">Tính</button>
+    </div>
+}
+

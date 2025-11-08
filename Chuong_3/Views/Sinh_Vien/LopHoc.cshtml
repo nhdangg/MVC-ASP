@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Chuong_3.Models.LopHoc>
+<style>
+    #sp {
+        color: #ffffff !important; /* trắng */
+        text-decoration: none;
+    }
+    #sp:hover {
+        color: #ffc107 !important; /* vàng */
+    }
+</style>
+<ul class="lh-lg">
+        @foreach (var lop in Model)
+        {
+            <li>
+                @Html.ActionLink(
+            lop.TenLop,
+            "DanhSachSinhVien",
+            "Sinh_Vien",
+            new { lopId = lop.MaLop },
+            new { id = "sp" }
+        )
+                    </li>
+        }
+</ul>
+

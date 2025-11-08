@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<style>
+    #menu1 .navbar-collapse .navbar-nav .nav-item .nav-link {
+        border-right: 1px solid #808080;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        font-size: 14px;
+    }
+
+    #menu1 .navbar-collapse .navbar-nav .nav-item:last-child .nav-link {
+        border-right: none;
+    }
+
+    #menu2 .navbar-collapse .navbar-nav .nav-item .nav-link {
+        padding: 5px 20px;
+       
+    }
+   .navbar-nav .nav-item .nav-link:hover {
+        color: #ffc107 !important; /* vàng */
+    }
+    #sp:hover {
+        color: #ffc107 !important; /* vàng */
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark align-items-start px-5" id="menu1">
+        <div class="container-fluid">
+            <div class="navbar-brand" style="line-height:1;">
+                @Html.ActionLink("VUI- CNTT", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fw-bold", style = "font-size: 55px;" })<br />
+                @Html.ActionLink("Lập trình web ASP.net Mvc", "Index", "Home", new { area = "" }, new { @class = "ps-2 navbar-brand fw-bold", style = "font-size: 20px;" })
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto">
+                    <!-- ms-auto = đẩy sang phải -->
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Site Map", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" id="menu2">
+        <div class="container-fluid mt-2 p-0">
+            <!-- Nút menu trên mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#subMenu"
+                    aria-controls="subMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu -->
+            <div class="collapse navbar-collapse border-bottom border-top" id="subMenu">
+                <ul class="navbar-nav ms-auto px-5">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Giới thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Dịch vụ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hỗ trợ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Thông tin</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid body-content p-0 m-0">
+        <section class="d-flex flex-wrap min-vh-75 bg-primary">
+            <!-- NỘI DUNG CHÍNH -->
+            <div class="col-md-8 col-lg-9 col-12 p-4 bg-white shadow-sm rounded-start order-2 order-md-1">
+                @RenderBody()
+            </div>
+            <aside class="col-md-4 col-lg-3 col-12 text-white p-3 shadow-sm border-top order-1 order-md-2" style="background: #071A2B;">
+                <h5 class="text-start mb-3 pb-2 border-bottom border-secondary">Tìm kiếm</h5>
+
+                <!-- TÌM KIẾM  -->
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm...">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+                <h5 class="text-start mb-3 pb-2 border-bottom border-secondary mt-5">Danh sách Sinh Viên</h5>
+                @Html.ActionLink("Toàn bộ Sinh Viên", "Index", "Sinh_Vien", null, new { @class = "text-decoration-none ms-3" })
+                <!-- DANH SÁCH CÁC LỚP -->
+                <h5 class="text-start mb-3 pb-2 border-bottom border-secondary mt-5">Danh sách các lớp</h5>
+                @*<ul class="lh-lg">*@
+                @*<li>@Html.ActionLink("Xem tất cả sinh viên", "Index", "SinhVien", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>
+        <li>@Html.ActionLink("Công nghệ thông tin", "", null, new {@class = "text-decoration-none text-white-50", id="sp" })</li>
+        <li>@Html.ActionLink("Kinh tế", "", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>
+        <li>@Html.ActionLink("Ngoại ngữ", "", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>*@
+                @Html.Action("LopHoc", "Sinh_Vien", new { @class = "text-decoration-none text-white-50", id = "sp" })
+                @*</ul>*@
+            </aside>
+        </section>
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

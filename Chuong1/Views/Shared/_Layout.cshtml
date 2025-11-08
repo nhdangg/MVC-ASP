@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<style>
+    body {
+        cursor: url('/img//ok.png'), auto;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("Application HaiDang", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMobile">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu PC -->
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Trang chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Thông tin", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Liên hệ", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+            </div>
+
+            <!-- Menu Mobile Offcanvas -->
+            <div class="offcanvas offcanvas-start text-bg-dark d-lg-none" tabindex="-1" id="menuMobile">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title">Menu</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            @Html.ActionLink("Trang chủ", "Index", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Thông tin", "About", "Home", null, new { @class = "nav-link" })
+                        </li>
+                        <li class="nav-item">
+                            @Html.ActionLink("Liên hệ", "Contact", "Home", null, new { @class = "nav-link" })
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid body-content p-0 m-0">
+        <section class="d-flex flex-wrap min-vh-100 bg-primary ">
+            <aside class="col-md-2 col-12 text-white p-3 shadow-sm border-top" style="background: #071A2B;">
+                <h5 class="text-center mb-3 pb-2 border-bottom border-secondary">MENU</h5>
+
+                <div class="accordion" id="mainChapter">
+
+                    <!-- Cấp 1: Chương 1 -->
+                    <div class="accordion-item" style="background:#071A2B; border:0;">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed text-white" style="background:#0B2C48;" type="button" data-bs-toggle="collapse" data-bs-target="#chuong1">
+                                <i class="bi bi-journal-bookmark me-2"></i> Chương 1
+                            </button>
+                        </h2>
+
+                        <div id="chuong1" class="accordion-collapse collapse" data-bs-parent="#mainChapter">
+
+                            <div class="accordion-body p-0">
+
+                                <!-- Cấp 2: SGK -->
+                                <div class="accordion accordion-flush" id="sgkGroup">
+                                    <div class="accordion-item bg-transparent border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed text-warning bg-transparent" data-bs-toggle="collapse" data-bs-target="#sgkMenu">
+                                                <i class="bi bi-book me-2"></i> Bài Tập SGK
+                                            </button>
+                                        </h2>
+                                        <div id="sgkMenu" class="accordion-collapse collapse" data-bs-parent="#sgkGroup">
+                                            <ul class="nav flex-column ms-4">
+                                                <li class="nav-item"><a href="/Bai1/Index" class="nav-link text-white">• Bài 1</a></li>
+                                                <li class="nav-item"><a href="/Bai2/Index" class="nav-link text-white">• Bài 2</a></li>
+                                                <li class="nav-item"><a href="/Bai3/Index" class="nav-link text-white">• Bài 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cấp 2: Bài Tập Tuần 1 -->
+                                <div class="accordion accordion-flush" id="weekGroup">
+                                    <div class="accordion-item bg-transparent border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed text-warning bg-transparent" data-bs-toggle="collapse" data-bs-target="#week1Menu">
+                                                <i class="bi bi-calendar-week me-2"></i> Bài Tập Tuần 1
+                                            </button>
+                                        </h2>
+                                        <div id="week1Menu" class="accordion-collapse collapse" data-bs-parent="#weekGroup">
+                                            <ul class="nav flex-column ms-4">
+                                                <li><a href="/BaiTap1_Tuan1/Index" class="nav-link text-white">• Bài 1</a></li>
+                                                <li><a href="/BaiTap2_Tuan1/Nhap" class="nav-link text-white">• Bài 2</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cấp 2: Bài Thảo Luận -->
+                                <div class="accordion accordion-flush" id="discussionGroup">
+                                    <div class="accordion-item bg-transparent border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed text-warning bg-transparent" data-bs-toggle="collapse" data-bs-target="#discussionMenu">
+                                                <i class="bi bi-chat-left-dots me-2"></i> Bài Thảo Luận
+                                            </button>
+                                        </h2>
+                                        <div id="discussionMenu" class="accordion-collapse collapse" data-bs-parent="#discussionGroup">
+                                            <ul class="nav flex-column ms-4">
+                                                <li><a href="/Bai1_ThaoLuan1_2/Index" class="nav-link text-white">• Bài 1</a></li>
+                                                <li><a href="/Bai2_ThaoLuan1_2/NhapLuong" class="nav-link text-white">• Bài 2</a></li>
+                                                <li><a href="/Bai3_ThaoLuan1_2/Index" class="nav-link text-white">• Bài 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Cấp 2: Thảo Luận Trên Lớp -->
+                                <div class="accordion accordion-flush" id="classDiscussGroup">
+                                    <div class="accordion-item bg-transparent border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed text-warning bg-transparent" data-bs-toggle="collapse" data-bs-target="#classDiscussionMenu">
+                                                <i class="bi bi-people-fill me-2"></i> Thảo Luận Trên Lớp
+                                            </button>
+                                        </h2>
+                                        <div id="classDiscussionMenu" class="accordion-collapse collapse" data-bs-parent="#classDiscussGroup">
+                                            <ul class="nav flex-column ms-4">
+                                                <li><a href="/Student_TL/Index" class="nav-link text-white">• Bài 1 - Student</a></li>
+                                            </ul>
+                                        </div>
+                                        <div id="classDiscussionMenu" class="accordion-collapse collapse" data-bs-parent="#classDiscussGroup">
+                                            <ul class="nav flex-column ms-4">
+                                                <li><a href="/TL_GiaiPT_Bac1/Index" class="nav-link text-white">• Bài 2 - PT Bậc 1</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </aside>
+
+            <!-- NỘI DUNG CHÍNH -->
+            <div class="col-md-10 col-12 p-4 bg-white shadow-sm rounded-end">
+                @RenderBody()
+            </div>
+        </section>
+        <hr />
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

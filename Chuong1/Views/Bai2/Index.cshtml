@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container col-md-12 col-lg-6 col-12">
+    <form method="post" action="Tinh_Tien_Dien" class="col-12 p-4">
+        <div class="border rounded-2 shadow p-0">
+
+            <h2 class="text-center text-white bg-black py-2 rounded-top">
+                Tính tiền điện
+            </h2>
+
+            <div class="row px-5">
+                <label class="col-12 form-label mt-3 p-0">Vào chỉ số cũ (KW):</label>
+                <input type="text" name="cu" class="form-control mb-3" required />
+
+                <label class="col-12 form-label p-0">Vào chỉ số mới (KW):</label>
+                <input type="text" name="moi" class="form-control mb-3" required />
+
+                <label class="form-label col-12 p-0">Loại điện tiêu thụ:</label>
+                <select name="loai" class="form-select mb-3">
+                    <option value="SinhHoat">Điện sinh hoạt</option>
+                    <option value="KinhDoanh">Điện kinh doanh</option>
+                    <option value="SanXuat">Điện sản xuất</option>
+                </select>
+
+                <div class="col-12 mb-3 p-0">
+                    <input type="checkbox" class="form-check-input me-2" name="check" value="true" />
+                    <label class="form-check-label">Hộ ưu tiên</label>
+                </div>
+
+                <div class="col-12 d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary col-12 my-3">
+                        Tính
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>

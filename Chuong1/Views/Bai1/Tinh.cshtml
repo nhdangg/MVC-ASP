@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Tinh";
+}
+
+<h2>
+    Kết quả @ViewBag.soA
+    @(ViewBag.pheptinh == "cong" ? " + " : ViewBag.pheptinh == "tru" ? " - " : ViewBag.pheptinh == "chia" ? " / " : ViewBag.pheptinh == "nhan" ? " * " : "")
+    @ViewBag.soB = @ViewBag.KetQuaa
+</h2>
+
+

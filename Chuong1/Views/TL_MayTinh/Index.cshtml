@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Chuong1.Models.MayTinh>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Danh Sách Máy", "Index", null, new { @class = "ms-3" })
+    @Html.ActionLink("3 Máy giá thấp nhất", "DanhSachMayTinh", null, new { @class = "ms-3" })
+    @Html.ActionLink("Sắp xếp giảm dần theo giá", "SapXepGiam", null, new { @class = "ms-3" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaMay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDongMay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgaySanXuat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HangSanXuat)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaMay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenDongMay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySanXuat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HangSanXuat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
+
