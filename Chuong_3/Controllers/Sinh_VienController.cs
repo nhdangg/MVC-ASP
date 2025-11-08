@@ -39,6 +39,24 @@ namespace Chuong_3.Controllers
             var svGiam = SV.OrderByDescending(sv => sv.Tuoi).ToList();
             return View("Index", svGiam);
         }
+        public ActionResult T3NguoiTuoiCaoNhat()
+        {
+            var sv3Nguoi = SV.OrderByDescending(sv => sv.Tuoi).Take(3).ToList();
+            return View("Index", sv3Nguoi);
+        }
+        public ActionResult TimKiemSinhVien(string hoTen)
+        {
+          if(string.IsNullOrEmpty(hoTen))
+          {
+              return RedirectToAction("Index");
+          }
+            else
+            {
+                hoTen = hoTen.Trim();
+                var svTimKiem = SV.Where(sv => sv.HoTen.IndexOf(hoTen, StringComparison.OrdinalIgnoreCase) >= 0).ToList();
+                return View("Index", svTimKiem);
+            }
+        }
         public PartialViewResult LopHoc()
         {
             return PartialView(LH);

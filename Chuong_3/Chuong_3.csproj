@@ -192,6 +192,9 @@
     <Content Include="Views\Sinh_Vien\Edit.cshtml" />
     <Content Include="Views\Sinh_Vien\Delete.cshtml" />
     <Content Include="Views\Sinh_Vien\XapSepTang.cshtml" />
+    <Content Include="Views\Sinh_Vien\XapSepGiam.cshtml" />
+    <Content Include="Views\Sinh_Vien\T3NguoiTuoiCaoNhat.cshtml" />
+    <Content Include="Views\Sinh_Vien\TimKiemSinhVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
