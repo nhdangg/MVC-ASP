@@ -21,8 +21,9 @@ namespace Chuong_3.Controllers
             new SinhVien(1,"Nguyen Van A",20,"Nam",1),
             new SinhVien(2,"Tran Thi B",21,"Nu",2),
             new SinhVien(3,"Le Van C",22,"Nam",1),
-            new SinhVien(4,"Pham Thi D",20,"Nu",2),
-            new SinhVien(5,"Hoang Van E",23,"Nam",1)
+            new SinhVien(4,"Pham Thi D",20,"Nu",3),
+            new SinhVien(5,"Hoang Van E",23,"Nam",1),
+            new SinhVien(1,"Nguyen Van G",23,"Nam",4)
         };
         // GET: Sinh_Vien
         public ActionResult Index()

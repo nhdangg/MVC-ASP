@@ -100,17 +100,12 @@
                     <input type="text" class="form-control" placeholder="Nhập nội dung tìm kiếm...">
                     <button type="submit" class="btn btn-primary">Search</button>
                 </div>
-                <h5 class="text-start mb-3 pb-2 border-bottom border-secondary mt-5">Danh sách Sinh Viên</h5>
-                @Html.ActionLink("Toàn bộ Sinh Viên", "Index", "Sinh_Vien", null, new { @class = "text-decoration-none ms-3" })
+
                 <!-- DANH SÁCH CÁC LỚP -->
                 <h5 class="text-start mb-3 pb-2 border-bottom border-secondary mt-5">Danh sách các lớp</h5>
-                @*<ul class="lh-lg">*@
-                @*<li>@Html.ActionLink("Xem tất cả sinh viên", "Index", "SinhVien", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>
-        <li>@Html.ActionLink("Công nghệ thông tin", "", null, new {@class = "text-decoration-none text-white-50", id="sp" })</li>
-        <li>@Html.ActionLink("Kinh tế", "", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>
-        <li>@Html.ActionLink("Ngoại ngữ", "", null, new { @class = "text-decoration-none text-white-50", id = "sp" })</li>*@
+               
                 @Html.Action("LopHoc", "Sinh_Vien", new { @class = "text-decoration-none text-white-50", id = "sp" })
-                @*</ul>*@
+               
             </aside>
         </section>
         <hr />
