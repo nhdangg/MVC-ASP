@@ -13,14 +13,8 @@
         @foreach (var lop in Model)
         {
             <li>
-                @Html.ActionLink(
-            lop.TenLop,
-            "DanhSachSinhVien",
-            "Sinh_Vien",
-            new { lopId = lop.MaLop },
-            new { id = "sp" }
-        )
-                    </li>
+                @Html.ActionLink(lop.TenLop, "DanhSachSinhVien", "Sinh_Vien", new { lopId = lop.MaLop },new { id = "sp" })
+            </li>
         }
 </ul>
 

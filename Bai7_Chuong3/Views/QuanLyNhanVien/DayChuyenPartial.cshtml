@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Bai7_Chuong3.Models.DayChuyenSanXuat>
+
+<ul>
+    @foreach (var chuyen in Model)
+    {
+        <li>
+            @Html.ActionLink(chuyen.TenDayChuyen, "DanhSachNhanVienTheoDayChuyen", "QuanLyNhanVien", new { maDC = chuyen.MaDayChuyen }, null)
+        </li>
+    }
+</ul>

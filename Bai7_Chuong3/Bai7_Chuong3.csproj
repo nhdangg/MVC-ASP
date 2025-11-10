@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{FB362B71-F02D-452C-9912-3A1C38C46523}</ProjectGuid>
+    <ProjectGuid>{494838DB-261B-478F-A998-AB335A4888D5}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Chuong_3</RootNamespace>
-    <AssemblyName>Chuong_3</AssemblyName>
+    <RootNamespace>Bai7_Chuong3</RootNamespace>
+    <AssemblyName>Bai7_Chuong3</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44337</IISExpressSSLPort>
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -121,12 +121,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Sinh_VienController.cs" />
+    <Compile Include="Controllers\QuanLyNhanVienController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\LopHoc.cs" />
-    <Compile Include="Models\SinhVien.cs" />
+    <Compile Include="Models\DayChuyenSanXuat.cs" />
+    <Compile Include="Models\NhanVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -180,20 +180,14 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\QuanLyNhanVien\Index.cshtml" />
+    <Content Include="Views\QuanLyNhanVien\DayChuyenPartial.cshtml" />
+    <Content Include="Views\QuanLyNhanVien\DanhSachNhanVienTheoDayChuyen.cshtml" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
-    <Content Include="Views\Sinh_Vien\LopHoc.cshtml" />
-    <Content Include="Views\Sinh_Vien\DanhSachSinhVien.cshtml" />
-    <Content Include="Views\Sinh_Vien\Create.cshtml" />
-    <Content Include="Views\Sinh_Vien\Index.cshtml" />
-    <Content Include="Views\Sinh_Vien\Edit.cshtml" />
-    <Content Include="Views\Sinh_Vien\Delete.cshtml" />
-    <Content Include="Views\Sinh_Vien\XapSepTang.cshtml" />
-    <Content Include="Views\Sinh_Vien\XapSepGiam.cshtml" />
-    <Content Include="Views\Sinh_Vien\T3NguoiTuoiCaoNhat.cshtml" />
-    <Content Include="Views\Sinh_Vien\TimKiemSinhVien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QuanLyNhanVien_\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -238,9 +232,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61478</DevelopmentServerPort>
+          <DevelopmentServerPort>65138</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44337/</IISUrl>
+          <IISUrl>https://localhost:44390/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

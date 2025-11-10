@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Bai7_Chuong3.Models.NhanVien>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Mã Nhân Viên")
+        </th>
+        <th>
+            @Html.Label("Họ Tên")
+        </th>
+        <th>
+            @Html.Label("Địa Chỉ")
+        </th>
+        <th>
+            @Html.Label("Số Ngày Làm")
+        </th>
+        <th>
+            @Html.Label("Lương Ngày")
+        </th>
+        <th>
+            @Html.Label("Mã Chuyền Sản Xuất")
+        </th>
+        <th>
+            @Html.Label("Tiền Lương")
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenNV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiaChi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoNgayLam)
+        </td>
+        <td>
+            @item.LuongTheoNgay.ToString("#,0")
+        </td>
+        <td>
+            @item.MaDayChuyen
+        </td>
+        <td>
+            @item.TinhLuong().ToString("#,0")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
