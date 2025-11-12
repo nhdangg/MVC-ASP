@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm("Index", "HtmlHelpers", FormMethod.Post, new { @class = "form-class", id = "form-id" }))
+{
+    @Html.TextBox("username", null, new { @class = "input-class", placeholder = "Enter username" })
+    @Html.TextArea("comments", null,2,5, new { @class = "form-control", placeholder = "Enter your comments" })
+
+<div>
+    @Html.Password("password", null, new { @class = "input-class", placeholder = "Enter password", Required = "", Maxlength = "10"})
+</div>
+<button type="submit">ok</button>
+}

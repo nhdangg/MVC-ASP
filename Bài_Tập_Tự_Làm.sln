@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TongHopChuong1", "TongHopCh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bai7_Chuong3", "Bai7_Chuong3\Bai7_Chuong3.csproj", "{494838DB-261B-478F-A998-AB335A4888D5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Html_helpers", "Test_Html_helpers\Test_Html_helpers.csproj", "{56D4D667-1C3E-49A0-A6AE-9C9BCC9EC291}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{494838DB-261B-478F-A998-AB335A4888D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{494838DB-261B-478F-A998-AB335A4888D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{494838DB-261B-478F-A998-AB335A4888D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D4D667-1C3E-49A0-A6AE-9C9BCC9EC291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D4D667-1C3E-49A0-A6AE-9C9BCC9EC291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D4D667-1C3E-49A0-A6AE-9C9BCC9EC291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D4D667-1C3E-49A0-A6AE-9C9BCC9EC291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
