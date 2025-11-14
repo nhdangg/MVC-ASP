@@ -29,5 +29,6 @@ namespace KetNoi_CSDL.Models
         public Nullable<double> Luong { get; set; }
 
         public virtual PHONG PHONG { get; set; }
+        public string TenPhong => PHONG != null ? PHONG.Tenphong : "";
     }
 }

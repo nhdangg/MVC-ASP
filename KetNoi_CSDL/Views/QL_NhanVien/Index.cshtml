@@ -19,6 +19,9 @@
             @Html.Label("Mã phòng")
         </th>
         <th>
+            @Html.Label("Thông tin phòng")
+        </th>
+        <th>
             @Html.Label("Lương")
         </th>
         <th></th>
@@ -35,6 +38,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Maphong)
+            </td>
+            <td>
+                @item.TenPhong
             </td>
             <td>
                 @($"{item.Luong:#,0} VNĐ")
